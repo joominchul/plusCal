@@ -7,33 +7,48 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+	lateinit var ca:Button
+	lateinit var b0:Button
+	lateinit var b1:Button
+	lateinit var b2:Button
+	lateinit var b3:Button
+	lateinit var b4:Button
+	lateinit var b5:Button
+	lateinit var b6:Button
+	lateinit var b7:Button
+	lateinit var b8:Button
+	lateinit var b9:Button
+	lateinit var plus:Button
+	lateinit var same:Button
+	lateinit var show:TextView
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
-		val ca:Button = findViewById(R.id.ca)
-		val b0:Button = findViewById(R.id.b0)
-		val b1:Button = findViewById(R.id.b1)
-		val b2:Button = findViewById(R.id.b2)
-		val b3:Button = findViewById(R.id.b3)
-		val b4:Button = findViewById(R.id.b4)
-		val b5:Button = findViewById(R.id.b5)
-		val b6:Button = findViewById(R.id.b6)
-		val b7:Button = findViewById(R.id.b7)
-		val b8:Button = findViewById(R.id.b8)
-		val b9:Button = findViewById(R.id.b9)
-		val plus:Button = findViewById(R.id.plus)
-		val same:Button = findViewById(R.id.same)
-		val show:TextView = findViewById(R.id.show)
+		ca = findViewById(R.id.ca)
+		b0 = findViewById(R.id.b0)
+		b1 = findViewById(R.id.b1)
+		b2 = findViewById(R.id.b2)
+		b3 = findViewById(R.id.b3)
+		b4 = findViewById(R.id.b4)
+		b5 = findViewById(R.id.b5)
+		b6 = findViewById(R.id.b6)
+		b7 = findViewById(R.id.b7)
+		b8 = findViewById(R.id.b8)
+		b9 = findViewById(R.id.b9)
+		plus = findViewById(R.id.plus)
+		same = findViewById(R.id.same)
+		show = findViewById(R.id.show)
 
 		//show 창에 보여질 숫자
-		var num:String = ""
+		var num = ""
 
 		//'=' 버튼 클릭 시 기존 계산식들을 '+'를 기준으로 분리해 resultList로 저장
 		// 이후 result 변수에 각 숫자들을 더해서 저장.
 		// 마지막으로 num에 result 변수를 String으로 변환해 저장 후 show 창에 출력
 		same.setOnClickListener {
 			val resultList:List<String> = num.split(" + ")
-			var result:Int = 0
+			var result = 0
 			resultList.forEach {
 				result+=it.toInt()
 			}
