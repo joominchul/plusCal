@@ -2,8 +2,10 @@ package com.example.pluscal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,11 +48,17 @@ class MainActivity : AppCompatActivity() {
 		//'=' 버튼 클릭 시 기존 계산식들을 '+'를 기준으로 분리해 resultList로 저장
 		// 이후 result 변수에 각 숫자들을 더해서 저장.
 		// 마지막으로 num에 result 변수를 String으로 변환해 저장 후 show 창에 출력
+		// Int 범위 초과 등 에러 발생 시 토스트 메시지 생성
 		same.setOnClickListener {
 			val resultList:List<String> = num.split(" + ")
 			var result = 0
-			resultList.forEach {
-				result+=it.toInt()
+			try {
+				resultList.forEach {
+					result+=it.toInt()
+				}
+			} catch (e:Exception) {
+				Log.d("sameError", "error")
+				Toast.makeText(this@MainActivity, "에러 발생", Toast.LENGTH_SHORT).show()
 			}
 			num = result.toString()
 			show.text = num
