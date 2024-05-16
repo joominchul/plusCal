@@ -68,48 +68,64 @@ class MainActivity : AppCompatActivity() {
 			show.text = num
 		}
 
+		onClickNumberButton()
+
 		// 각 숫자 버튼 클릭 시 출력 값(num)에 숫자 추가됨
-		b0.setOnClickListener {
-			num+="0"
-			show.text = num
-		}
-		b1.setOnClickListener {
-			num+="1"
-			show.text = num
-		}
-		b2.setOnClickListener {
-			num+="2"
-			show.text = num
-		}
-		b3.setOnClickListener {
-			num+="3"
-			show.text = num
-		}
-		b4.setOnClickListener {
-			num+="4"
-			show.text = num
-		}
-		b5.setOnClickListener {
-			num+="5"
-			show.text = num
-		}
-		b6.setOnClickListener {
-			num+="6"
-			show.text = num
-		}
-		b7.setOnClickListener {
-			num+="7"
-			show.text = num
-		}
-		b8.setOnClickListener {
-			num+="8"
-			show.text = num
-		}
-		b9.setOnClickListener {
-			num+="9"
-			show.text = num
-		}
+//		b0.setOnClickListener {
+//			num+="0"
+//			show.text = num
+//		}
+//		b1.setOnClickListener {
+//			num+="1"
+//			show.text = num
+//		}
+//		b2.setOnClickListener {
+//			num+="2"
+//			show.text = num
+//		}
+//		b3.setOnClickListener {
+//			num+="3"
+//			show.text = num
+//		}
+//		b4.setOnClickListener {
+//			num+="4"
+//			show.text = num
+//		}
+//		b5.setOnClickListener {
+//			num+="5"
+//			show.text = num
+//		}
+//		b6.setOnClickListener {
+//			num+="6"
+//			show.text = num
+//		}
+//		b7.setOnClickListener {
+//			num+="7"
+//			show.text = num
+//		}
+//		b8.setOnClickListener {
+//			num+="8"
+//			show.text = num
+//		}
+//		b9.setOnClickListener {
+//			num+="9"
+//			show.text = num
+//		}
 
 
+	}
+
+	// 각 숫자 버튼 클릭 시 출력 값(num)에 숫자 추가됨
+	fun onClickNumberButton(){
+		val buttonList:List<Button> = listOf(
+			b0,b1,b2,b3,b4,b5,b6,b7,b8,b9
+		)
+
+		buttonList.forEach {
+			it.setOnClickListener {
+				num+=(it as TextView).text
+				show.text = num
+			}
+		}
 	}
 }
