@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
 	lateinit var same:Button
 	lateinit var show:TextView
 
+	//show 창에 보여질 숫자
+	var num = ""
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
@@ -39,9 +42,6 @@ class MainActivity : AppCompatActivity() {
 		plus = findViewById(R.id.plus)
 		same = findViewById(R.id.same)
 		show = findViewById(R.id.show)
-
-		//show 창에 보여질 숫자
-		var num = ""
 
 		//'=' 버튼 클릭 시 기존 계산식들을 '+'를 기준으로 분리해 resultList로 저장
 		// 이후 result 변수에 각 숫자들을 더해서 저장.
