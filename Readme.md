@@ -27,3 +27,6 @@
 
 ### 에러
 - Int 범위 초과나 계산이 옳지 않은 경우 토스트 메시지 출력
+
+# 결과
+<img src="https://github.com/joominchul/plusCal/blob/master/%EA%B8%B0%EB%B3%B8%20%ED%99%94%EB%A9%B4.png?raw=true"/>
